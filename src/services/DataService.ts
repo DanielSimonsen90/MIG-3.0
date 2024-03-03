@@ -1,5 +1,5 @@
-import { Genre, assignArrayWithSelection } from '../common';
-import { ArrayUtils, Random } from '../common/utils';
+import { Genre } from '../common';
+import { Random } from '../common/utils';
 import { Artists, Tracks, Genres, TrackNameWords, Arrangements } from '../data';
 
 export class DataService {
@@ -15,13 +15,9 @@ export class DataService {
     return Artists.find(artist => artist.releases.includes(track));
   }
 
-  public static generateIdeaTitle(): string {
-    const wordCount = Random.between(2, 8);
-    const result = assignArrayWithSelection(wordCount, TrackNameWords).join(' '); // TODO: Consider using GBT to fix the name
-    return result.charAt(0).toUpperCase() + result.slice(1);
-  }
-  public static generateArrangement(): string {
-    const arrangement = Random.fromArray(Arrangements);
-    return arrangement.sections.join(' - ');
-  }
+  public static Artists = Artists;
+  public static Tracks = Tracks;
+  public static Genres = Genres;
+  public static TrackNameWords = TrackNameWords;
+  public static Arrangements = Arrangements;
 }

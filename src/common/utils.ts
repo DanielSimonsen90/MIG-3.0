@@ -4,7 +4,7 @@ export class Random {
   }
 
   public static max(max: number): number {
-    return Math.floor(Math.random() * max);
+    return Math.floor(Math.random() * max) + 1;
   }
 
   public static between(min: number, max: number): number {
@@ -13,6 +13,10 @@ export class Random {
 
   public static range(range: [number, number]): number {
     return Random.between(range[0], range[1]);
+  }
+
+  public static chance(percentage: number): boolean {
+    return Math.random() > percentage / 100;
   }
 }
 
@@ -30,4 +34,11 @@ export class StringUtils {
   public static pascalCase(str: string): string {
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
+}
+
+// @ts-ignore
+window.utils = {
+  Random,
+  ArrayUtils,
+  StringUtils
 }

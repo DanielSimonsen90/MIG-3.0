@@ -721,7 +721,7 @@ const Playlist: Category = {
               new Arrangement(['Intro', 'Verse', 'Pre-Chorus', 'Drop', 'Solo', 'Pre-Chorus', 'Drop', 'Metal-Break', 'Pre-Chorus', 'Drop'])
             ),
             new Genre(
-              'Old',
+              'Old Rock',
               new BPM([80, 160]),
               new Drums('Acoustic', 'Main', 'Acoustic', 'Acoustic', 'Acoustic', true, true, true, true),
               new Synths(false, false, false, false, false),

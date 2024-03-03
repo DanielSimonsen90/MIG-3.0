@@ -1,0 +1,38 @@
+.idea {
+  header {
+    text-align: center;
+
+    h1 {
+      margin: 1rem 0;
+    }
+
+    p span:hover {
+      color: #aaa;
+    }
+  }
+
+  section {
+    display: grid;
+    grid-template-areas: 
+      "drums instruments effects" 
+      "synths synths synths";
+    justify-items: stretch;
+    gap: 1em;
+    
+    $areas: (drums, instruments, effects, synths);
+    @each $area in $areas {
+      ##{$area} {
+        grid-area: $area;
+      }
+    }
+  }
+
+  footer {
+    margin: 1rem;
+    margin-inline: 0;
+  }
+
+  #arrangement p {
+    text-align: center;
+  }
+}

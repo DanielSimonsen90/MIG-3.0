@@ -1,8 +1,13 @@
+import { useEffect } from "react";
 import { useGenerateIdea } from "../../hooks/useGenerateIdea";
 import Idea from "../Idea";
 
 export default function App() {
   const [idea, generateIdea] = useGenerateIdea();
+
+  useEffect(() => {
+    generateIdea(); // TODO: Remove for release
+  }, []);
 
   return (
     <main id="main">

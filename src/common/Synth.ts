@@ -29,5 +29,5 @@ export function assignArrayWithSelection<T>(amount: number, selection: Array<T>)
     result.push(Random.fromArray(selection));
   }
 
-  return result;
+  return [...new Set(result)]
 }

@@ -23,3 +23,9 @@ type Claps = 'Tight' | 'Main' | 'Huge' | 'Reverbed';
 type Hihats = 'Acoustic' | 'Tick' | 'Lofi' | 'Lowend'
 type Openhats = 'Acoustic' | 'House' | 'Club';
 type Snares = 'Acoustic' | 'House' | 'Lofi' | 'Future Bass' | 'Trap' | 'Club' | 'Dubstep';
+
+export const Kicks: Kicks[] = ['Acoustic', 'Punchy', 'Lofi', 'Distorted', 'Trance', 'Club', 'Classic Hardstyle Kick', 'Nasty Euphoric Hardstyle Kick', 'Euphoric Hardstyle Kick', 'Rawphoric Kick', 'Rawstyle Kick', 'Zaag Kick', 'Klaplong Kick', 'Hardcore Kick', 'Frenchcore Kick', 'Uptempo Kick', 'Piep Kick'];
+export const Claps: Claps[] = ['Tight', 'Main', 'Huge', 'Reverbed'];
+export const Hihats: Hihats[] = ['Acoustic', 'Tick', 'Lofi', 'Lowend'];
+export const Openhats: Openhats[] = ['Acoustic', 'House', 'Club'];
+export const Snares: Snares[] = ['Acoustic', 'House', 'Lofi', 'Future Bass', 'Trap', 'Club', 'Dubstep'];
