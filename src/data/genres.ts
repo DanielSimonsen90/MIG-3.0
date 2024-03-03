@@ -12,7 +12,7 @@ const Playlist: Category = {
               new BPM([126, 150]),
               new Drums('Punchy', 'Huge', 'Lowend', 'House', 'House', false, true, false, false),
               new Synths(true, true, true, true, false),
-              new Instruments(true, false, true, true, false),
+              new Instruments(true, false, true, true, false, false),
               new Arrangement(['Intro', 'Drop', 'Verse', 'Build-Up', 'Drop', 'Outro']),
             ),
             new Genre(
@@ -20,7 +20,7 @@ const Playlist: Category = {
               new BPM([125, 135]),
               new Drums('Punchy', 'Main', 'Tick', 'House', 'House', false, true, true, false),
               Synths.All,
-              new Instruments(true, true, true, true, false),
+              new Instruments(true, true, true, true, false, false),
               new Arrangement(['Intro', 'Verse', 'Build-Up', 'Drop', 'Drum-N-Bass-Break', 'Intro', 'Build-Up', 'Drop', 'Drum-N-Bass-Break']),
             )
           ],
@@ -32,7 +32,7 @@ const Playlist: Category = {
                   new BPM([128, 140]),
                   new Drums('Punchy', 'Main', 'Tick', 'Club', 'House', false, true, true, true),
                   new Synths(true, false, true, true, false),
-                  new Instruments(true, true, true, true, false),
+                  new Instruments(true, true, true, true, false, false),
                   new Arrangement(['Intro', 'Verse', 'Drop', 'Verse', 'Drop']),
                 ),
                 new Genre(
@@ -40,7 +40,7 @@ const Playlist: Category = {
                   new BPM([125, 175]),
                   new Drums('Punchy', 'Main', 'Tick', 'Club', 'House', false, true, true, true),
                   new Synths(true, false, true, true, false),
-                  new Instruments(true, true, true, true, false),
+                  new Instruments(true, true, true, true, false, false),
                   new Arrangement(['Intro', 'Pre-Chorus', 'Build-Up', 'Drop', 'Verse', 'Pre-Chorus', 'Build-Up', 'Drop']),
                 ),
                 new Genre(
@@ -48,7 +48,7 @@ const Playlist: Category = {
                   new BPM([128, 140]),
                   new Drums('Punchy', 'Main', 'Tick', 'Club', 'House', false, true, true, true),
                   new Synths(true, false, true, true, false),
-                  new Instruments(true, true, true, true, false),
+                  new Instruments(true, true, true, true, false, false),
                   new Arrangement(['Intro', 'Verse', 'Build-Up', 'Drop', 'Verse', 'Build-Up', 'Drop', 'Outro']),
                 )
               ]
@@ -90,8 +90,8 @@ const Playlist: Category = {
               new BPM([140, 150]),
               new Drums('Punchy', 'Main', 'Lowend', 'House', 'Dubstep', false, true, true, true),
               Synths.All,
-              new Instruments(true, false, true, true, false),
-              new Arrangement(['Intro', 'Build-Up', 'Drop', 'Break', 'Verse', 'Build-Up', 'Drop', 'Break', '8-bit Break', 'Outro']),
+              new Instruments(true, false, true, true, false, true),
+              new Arrangement(['Intro', 'Build-Up', 'Drop', 'Break', 'Verse', 'Build-Up', 'Drop', 'Break', '8-bit-Break', 'Outro']),
             )
           ]
         }),
@@ -126,7 +126,7 @@ const Playlist: Category = {
               new BPM([100, 170]),
               new Drums('Punchy', 'Main', 'Acoustic', 'House', 'House', true, true, true, false),
               Synths.All,
-              new Instruments(true, true, true, true, false),
+              new Instruments(true, true, true, true, false, false),
               new Arrangement(['Intro', 'Drop', 'Break', 'Build-Up', 'Drop', 'Break', 'Intro', 'Outro'])
             )
           ]
@@ -138,7 +138,7 @@ const Playlist: Category = {
               new BPM([140, 170]),
               new Drums('Punchy', 'Main', 'Tick', 'House', 'Future Bass', true, true, true, true),
               Synths.All,
-              new Instruments(true, false, false, true, true),
+              new Instruments(true, false, false, true, true, true),
               new Arrangement(['Intro', 'Verse', 'Pre-Chorus', 'Drop', 'Verse', 'Break', 'Pre-Chorus', 'Drop'])
             ),
             new Genre(
@@ -146,7 +146,7 @@ const Playlist: Category = {
               new BPM([90, 130]),
               new Drums('Punchy', 'Main', 'Tick', 'House', 'Future Bass', true, true, true, true),
               Synths.All,
-              new Instruments(true, true, false, true, true),
+              new Instruments(true, true, false, true, true, true),
               new Arrangement(['Intro', 'Build-Up', 'Verse', 'Pre-Chorus', 'Drop', 'Verse', 'Pre-Chorus', 'Drop'])
             ),
             new Genre(
@@ -154,7 +154,7 @@ const Playlist: Category = {
               new BPM([120, 160]),
               new Drums('Punchy', 'Main', 'Tick', 'House', 'Future Bass', true, true, true, true),
               Synths.All,
-              new Instruments(true, false, false, true, true),
+              new Instruments(true, false, false, true, true, true),
               new Arrangement(['Intro', 'Verse', 'Pre-Chorus', 'Build-Up', 'Drop', 'Verse', 'Pre-Chorus', 'Build-Up', 'Drop', 'Outro'])
             ),
             new Genre(
@@ -162,7 +162,7 @@ const Playlist: Category = {
               new BPM([125, 135]),
               new Drums('Punchy', 'Main', 'Tick', 'House', 'Future Bass', true, true, true, true),
               Synths.All,
-              new Instruments(true, false, false, true, true),
+              new Instruments(true, false, false, true, true, false),
               new Arrangement(['Intro', 'Verse', 'Build-Up', 'Drop', 'Break', 'Build-Up', 'Drop', 'Outro'])
             )
           ]
@@ -242,7 +242,7 @@ const Playlist: Category = {
               new BPM([100, 128]),
               new Drums('Punchy', 'Main', 'Acoustic', 'House', 'House', false, true, true, true),
               Synths.All,
-              new Instruments(true, true, false, true, true),
+              new Instruments(true, true, false, true, true, true),
               new Arrangement(['Verse', 'Pre-Chorus', 'Build-Up', 'Drop', 'Verse', 'Pre-Chorus', 'Drop', 'Outro'])
             )
           ],
@@ -290,7 +290,7 @@ const Playlist: Category = {
                   new BPM([110, 130]),
                   new Drums('Punchy', 'Main', 'Lowend', 'House', 'House', false, true, true, false),
                   Synths.All,
-                  new Instruments(true, true, false, true, true),
+                  new Instruments(true, true, false, true, true, true),
                   new Arrangement(['Intro', 'Verse', 'Build-Up', 'Drop', 'Break', 'Verse', 'Build-Up', 'Drop', 'Outro'])
                 ),
                 new Genre(
@@ -298,15 +298,15 @@ const Playlist: Category = {
                   new BPM([120, 135]),
                   new Drums('Punchy', 'Main', 'Lowend', 'House', 'House', false, true, true, false),
                   Synths.All,
-                  new Instruments(true, true, false, true, true),
-                  new Arrangement(['Verse', 'Pre-Chorus', 'Drop', 'Verse', 'Pre-Chorus', 'Drop', 'Vocal Chop Break', 'Drop'])
+                  new Instruments(true, true, false, true, true, true),
+                  new Arrangement(['Verse', 'Pre-Chorus', 'Drop', 'Verse', 'Pre-Chorus', 'Drop', 'Vocal-Chop-Break', 'Drop'])
                 ),
                 new Genre(
                   'Progressive Pop',
                   new BPM([125, 130]),
                   new Drums('Punchy', 'Main', 'Lowend', 'House', 'House', false, true, true, false),
                   Synths.All,
-                  new Instruments(true, true, false, true, true),
+                  new Instruments(true, true, false, true, true, true),
                   new Arrangement(['Intro', 'Verse', 'Build-Up', 'Drop', 'Break', 'Verse', 'Build-Up', 'Drop', 'Outro'])
                 )
               ]
@@ -322,7 +322,7 @@ const Playlist: Category = {
                   new BPM([128, 170]),
                   new Drums('Club', 'Main', 'Lowend', 'Club', 'House', false, true, true, false),
                   Synths.All,
-                  new Instruments(true, true, false, true, false),
+                  new Instruments(true, true, false, true, false, false),
                   new Arrangement(['Pre-Chorus', 'Build-Up', 'Drop', 'Verse', 'Pre-Chorus', 'Drop', 'Verse', 'Pre-Chorus', 'Drop'])
                 ),
                 new Genre(
@@ -330,7 +330,7 @@ const Playlist: Category = {
                   new BPM([120, 160]),
                   new Drums('Club', 'Huge', 'Acoustic', 'Club', 'House', true, true, true, false),
                   Synths.All,
-                  new Instruments(true, true, false, true, false),
+                  new Instruments(true, true, false, true, false, false),
                   new Arrangement(['Intro', 'Drop', 'Break', 'Build-Up', 'Drop', 'Techno-Break', 'Build-Up', 'Drop'])
                 )
               ]
@@ -351,7 +351,8 @@ const Playlist: Category = {
                   new Drums('Club', 'Main', 'Lowend', 'Club', 'Club', false, true, true, false),
                   Synths.All,
                   Instruments.All,
-                  new Arrangement(['Intro', 'Verse', 'Drop', 'Screech Break', 'Dubstep-Break', 'Break', 'Build-Up', 'Drop', 'Screech Break', 'Verse', 'Build-Up', 'Drop', 'Pre-Chorus', 'Outro'])
+                  new Arrangement(['Intro', 'Verse', 'Drop', 'Screech-Break', 'Dubstep-Break', 'Break', 'Build-Up', 'Drop', 'Screech-Break', 'Verse', 
+                    'Build-Up', 'Drop', 'Pre-Chorus', 'Outro'])
                 )
               ],
               subCategories: [
@@ -407,7 +408,7 @@ const Playlist: Category = {
                           new Drums('Euphoric Hardstyle Kick', 'Main', 'Lowend', 'Club', 'Club', false, true, true, false),
                           Synths.All,
                           Instruments.All,
-                          new Arrangement(['Intro', 'Verse', 'Build-Up', 'Drop', 'Vocal Chop Break', 'Build-Up', 'Drop', 'Outro'])
+                          new Arrangement(['Intro', 'Verse', 'Build-Up', 'Drop', 'Vocal-Chop-Break', 'Build-Up', 'Drop', 'Outro'])
                         ),
                         new Genre(
                           'Rawphoric',
@@ -427,7 +428,7 @@ const Playlist: Category = {
                           new Drums('Klaplong Kick', 'Main', 'Lowend', 'Club', 'Club', false, true, true, false),
                           Synths.All,
                           Instruments.All,
-                          new Arrangement(['Intro', 'Verse', 'Melody Reveal', 'Build-Up', 'Drop', 'Klaplong Break', 'Break', 'Build-Up', 'Drop', 'Klaplong Break'])
+                          new Arrangement(['Intro', 'Verse', 'Melody Reveal', 'Build-Up', 'Drop', 'Klaplong-Break', 'Break', 'Build-Up', 'Drop', 'Klaplong-Break'])
                         ),
                         new Genre(
                           'Rawstyle',
@@ -444,8 +445,8 @@ const Playlist: Category = {
                           new Drums('Zaag Kick', 'Main', 'Lowend', 'Club', 'Club', false, true, true, false),
                           Synths.All,
                           Instruments.All,
-                          new Arrangement(['Verse', 'Pre-Chorus', 'Build-Up', 'Melody Reveal', 'Build-Up', 'Drop', 'Zaag Break', 'Break', 'Melody Reveal', 
-                            'Pre-Chorus', 'Build-Up', 'Drop', 'Build-Up', 'Rawstyle Break'])
+                          new Arrangement(['Verse', 'Pre-Chorus', 'Build-Up', 'Melody Reveal', 'Build-Up', 'Drop', 'Zaag-Break', 'Break', 'Melody Reveal', 
+                            'Pre-Chorus', 'Build-Up', 'Drop', 'Build-Up', 'Rawstyle-Break'])
                         )
                       ]
                     }),
@@ -457,7 +458,7 @@ const Playlist: Category = {
                           new Drums('Uptempo Kick', 'Main', 'Lowend', 'Club', 'Club', false, true, true, false),
                           Synths.All,
                           Instruments.All,
-                          new Arrangement(['Intro', 'Verse', 'Build-Up', 'Drop', 'Vocal Chop Break', 'Break', 'Verse', 'Build-Up', 'Drop', 'Vocal Chop Break'])
+                          new Arrangement(['Intro', 'Verse', 'Build-Up', 'Drop', 'Vocal-Chop-Break', 'Break', 'Verse', 'Build-Up', 'Drop', 'Vocal-Chop-Break'])
                         ),
                         new Genre(
                           'TweekaTV After Party',
@@ -490,7 +491,7 @@ const Playlist: Category = {
                   new Drums('Trance', 'Main', 'Lowend', 'Club', 'House', false, true, true, false),
                   Synths.All,
                   Instruments.All,
-                  new Arrangement(['Intro', 'Verse', 'Break', 'Vocal Chop Break', 'Melody Reveal', 'Build-Up', 'Drop', 'Techno-Break', 
+                  new Arrangement(['Intro', 'Verse', 'Break', 'Vocal-Chop-Break', 'Melody Reveal', 'Build-Up', 'Drop', 'Techno-Break', 
                     'Break', 'Verse', 'Build-Up', 'Drop', 'Break'])
                 ),
                 new Genre(
@@ -555,6 +556,206 @@ const Playlist: Category = {
         })
       ]
     }),
+    new Category('Everything else', {
+      genres: [
+        new Genre(
+          'Acoustic',
+          new BPM([90, 130]),
+          new Drums('Acoustic', 'Main', 'Acoustic', 'Acoustic', 'Acoustic', true, true, true, true),
+          new Synths(false, false, false, false, false),
+          Instruments.All,
+          new Arrangement(['Pre-Chorus', 'Verse', 'Pre-Chorus', 'Drop', 'Verse', 'Pre-Chorus', 'Drop', 'Outro'])
+        ),
+        new Genre(
+          'Country',
+          new BPM([70, 120]),
+          new Drums('Acoustic', 'Main', 'Acoustic', 'Acoustic', 'Acoustic', true, true, true, true),
+          new Synths(false, false, false, false, false),
+          Instruments.All,
+          new Arrangement(['Intro', 'Verse', 'Pre-Chorus', 'Drop', 'Verse', 'Pre-Chorus', 'Drop'])
+        ),
+        new Genre(
+          'Grandpa Music',
+          new BPM([80, 120]),
+          new Drums('Acoustic', 'Main', 'Acoustic', 'Acoustic', 'Acoustic', true, true, true, true),
+          new Synths(false, false, false, false, false),
+          Instruments.All,
+          new Arrangement(['Intro', 'Verse', 'Drop', 'Break', 'Verse', 'Drop', 'Break', 'Drop', 'Sax Solo', 'Verse', 'Drop'])
+        ),
+        new Genre(
+          'Girlbossing',
+          new BPM([100, 180]),
+          new Drums('Punchy', 'Main', 'Lowend', 'House', 'House', true, true, true, true),
+          Synths.All,
+          Instruments.All,
+          new Arrangement(['Intro', 'Pre-Chorus', 'Drop', 'Verse', 'Pre-Chorus', 'Drop', 'Break', 'Drop'])
+        ),
+        new Genre(
+          'Jazz',
+          new BPM([90, 130]),
+          new Drums('Acoustic', 'Main', 'Acoustic', 'Acoustic', 'Acoustic', true, true, true, true),
+          new Synths(false, false, false, false, false),
+          Instruments.All,
+          new Arrangement(['Verse', 'Pre-Chorus', 'Drop', 'Break', 'Verse', 'Pre-Chorus', 'Drop', 'Break'])
+        ),
+        new Genre(
+          'Weeb',
+          new BPM([90, 130]),
+          new Drums('Punchy', 'Main', 'Lowend', 'House', 'House', true, true, true, true),
+          Synths.All,
+          Instruments.All,
+          new Arrangement(['Intro', 'Verse', 'Pre-Chorus', 'Drop', 'Break', 'Verse', 'Pre-Chorus', 'Drop', 'Verse', 'Pre-Chorus', 'Drop'])
+        )
+      ],
+      subCategories: [
+        new Category('Lofi Hiphop', {
+          genres: [
+            new Genre(
+              'Lofi hiphop',
+              new BPM([70, 100]),
+              new Drums('Lofi', 'Tight', 'Lofi', 'Acoustic', 'Lofi', false, false, true, true),
+              new Synths(false, false, false, false, false),
+              Instruments.All,
+              new Arrangement(['Intro', 'Verse', 'Drop', 'Verse', 'Drop', 'Outro'])
+            ),
+            new Genre(
+              'Sad Lofi',
+              new BPM([60, 120]),
+              new Drums('Lofi', 'Tight', 'Lofi', 'Acoustic', 'Lofi', true, false, true, true),
+              new Synths(false, false, false, false, false),
+              Instruments.All,
+              new Arrangement(['Pre-Chorus', 'Verse', 'Pre-Chorus', 'Drop', 'Verse', 'Pre-Chorus', 'Drop', 'Outro'])
+            )
+          ]
+        }),
+        new Category('Trap/Rap/Hiphop', {
+          genres: [
+            new Genre(
+              'Sad Rap',
+              new BPM([70, 170]),
+              new Drums('Punchy', 'Tight', 'Tick', 'Acoustic', 'Trap', false, true, true, true),
+              Synths.All,
+              Instruments.All,
+              new Arrangement(['Intro', 'Pre-Chorus', 'Drop', 'Verse', 'Pre-Chorus', 'Drop', 'Orchestral-Break'])
+            ),
+            new Genre(
+              'Da Vibe',
+              new BPM([70, 180]),
+              new Drums('Punchy', 'Tight', 'Tick', 'Acoustic', 'Trap', false, true, true, true),
+              Synths.All,
+              Instruments.All,
+              new Arrangement(['Intro', 'Drop', 'Rap-Verse', 'Pre-Chorus', 'Drop', 'Break', 'Rap-Verse', 'Pre-Chorus', 'Drop', 'Break', 'Pre-Chorus', 'Drop'])
+            ),
+            new Genre(
+              'FeelsCoolMan',
+              new BPM([70, 170]),
+              new Drums('Punchy', 'Tight', 'Tick', 'Acoustic', 'Trap', false, true, true, true),
+              Synths.All,
+              Instruments.All,
+              new Arrangement(['Intro', 'Melody Reveal', 'Drop', 'Rap-Verse', 'Drop', 'Rap-Verse', 'Drop', 'Outro'])
+            ),
+            new Genre(
+              'Hip Hop',
+              new BPM([70, 150]),
+              new Drums('Punchy', 'Tight', 'Tick', 'Acoustic', 'Trap', false, true, true, true),
+              Synths.All,
+              Instruments.All,
+              new Arrangement(['Intro', 'Verse', 'Drop', 'Rap-Verse', 'Pre-Chorus', 'Drop', 'Rap-Verse', 'Pre-Chorus', 'Drop', 'Rap-Verse', 'Pre-Chorus', 'Drop'])
+            )
+          ],
+          subCategories: [
+            new Category('Phonk', {
+              genres: [
+                new Genre(
+                  'Dreamy/Chill Phonk',
+                  new BPM([100, 170]),
+                  new Drums('Punchy', 'Tight', 'Tick', 'Acoustic', 'Trap', false, true, true, true),
+                  Synths.All,
+                  Instruments.All,
+                  new Arrangement(['Intro', 'Vocal-Chop-Break', 'Drop', 'Break'])
+                ),
+                new Genre(
+                  'Phonk',
+                  new BPM([70, 170]),
+                  new Drums('Punchy', 'Tight', 'Tick', 'Acoustic', 'Trap', false, true, true, true),
+                  Synths.All,
+                  Instruments.All,
+                  new Arrangement(['Intro', 'Drop', 'Break', 'Drop', 'Outro'])
+                ),
+              ]
+            })
+          ]
+        }),
+        new Category('Rock, Metal & Guitar', {
+          genres: [
+            new Genre(
+              'Emo',
+              new BPM([70, 190]),
+              new Drums('Acoustic', 'Main', 'Acoustic', 'Acoustic', 'Acoustic', true, true, true, true),
+              Synths.All,
+              Instruments.All,
+              new Arrangement(['Intro', 'Verse', 'Solo', 'Verse', 'Pre-Chorus', 'Drop', 'Break', 'Verse', 'Pre-Chorus', 'Drop', 'Break', 'Verse', 'Pre-Chorus', 'Drop', 'Break'])
+            ),
+            new Genre(
+              'Goth',
+              new BPM([70, 180]),
+              new Drums('Acoustic', 'Main', 'Acoustic', 'Acoustic', 'Acoustic', true, true, true, true),
+              Synths.All,
+              Instruments.All,
+              new Arrangement(['Intro', 'Solo', 'Verse', 'Pre-Chorus', 'Drop', 'Verse', 'Pre-Chorus', 'Drop', 'Break', 'Pre-Chorus', 'Drop', 'Break'])
+            ),
+            new Genre(
+              'Indie',
+              new BPM([80, 160]),
+              new Drums('Acoustic', 'Main', 'Acoustic', 'Acoustic', 'Acoustic', true, true, true, true),
+              new Synths(false, false, false, false, false),
+              Instruments.All,
+              new Arrangement(['Intro', 'Verse', 'Drop', 'Verse', 'Pre-Chorus', 'Drop', 'Break'])
+            ),
+            new Genre(
+              'Metal',
+              new BPM([80, 200]),
+              new Drums('Acoustic', 'Main', 'Acoustic', 'Acoustic', 'Acoustic', true, true, true, true),
+              Synths.All,
+              Instruments.All,
+              new Arrangement(['Intro', 'Verse', 'Pre-Chorus', 'Drop', 'Solo', 'Pre-Chorus', 'Drop', 'Metal-Break', 'Pre-Chorus', 'Drop'])
+            ),
+            new Genre(
+              'Old',
+              new BPM([80, 160]),
+              new Drums('Acoustic', 'Main', 'Acoustic', 'Acoustic', 'Acoustic', true, true, true, true),
+              new Synths(false, false, false, false, false),
+              Instruments.All,
+              new Arrangement(['Intro', 'Verse', 'Drop', 'Verse', 'Pre-Chorus', 'Solo', 'Verse', 'Pre-Chorus', 'Drop', 'Sax Solo'])
+            ),
+            new Genre(
+              'Pop-Rock',
+              new BPM([80, 160]),
+              new Drums('Acoustic', 'Main', 'Acoustic', 'Acoustic', 'Acoustic', true, true, true, true),
+              Synths.All,
+              Instruments.All,
+              new Arrangement(['Intro', 'Verse', 'Pre-Chorus', 'Drop', 'Break', 'Verse', 'Pre-Chorus', 'Drop', 'Verse', 'Drop', 'Outro'])
+            ),
+            new Genre(
+              'Rock',
+              new BPM([80, 160]),
+              new Drums('Acoustic', 'Main', 'Acoustic', 'Acoustic', 'Acoustic', true, true, true, true),
+              new Synths(false, false, false, false, false),
+              Instruments.All,
+              new Arrangement(['Drop', 'Verse', 'Pre-Chorus', 'Drop', 'Verse', 'Pre-Chorus', 'Drop', 'Break', 'Solo', 'Drop'])
+            ),
+            new Genre(
+              'Wannabe Metal',
+              new BPM([80, 200]),
+              new Drums('Acoustic', 'Main', 'Acoustic', 'Acoustic', 'Acoustic', true, true, true, true),
+              Synths.All,
+              Instruments.All,
+              new Arrangement(['Intro', 'Verse', 'Pre-Chorus', 'Drop', 'Break', 'Verse', 'Pre-Chorus', 'Drop', 'Metal-Break', 'Techno-Break', 'Metal-Break', 'Break', 'Drop', 'Outro'])
+            )
+          ]
+        })
+      ]
+    })
   ]
 };
 

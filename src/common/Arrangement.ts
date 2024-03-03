@@ -31,14 +31,16 @@ export const ArrangementSections = [
   'Drum-N-Bass-Break',
   'Techno-Break',
   'Reggae-Break',
-  '8-bit Break',
-  'Vocal Chop Break',
-  'Screech Break',
-  'Klaplong Break',
-  'Zaag Break',
-  'Rawstyle Break',
+  '8-bit-Break',
+  'Vocal-Chop-Break',
+  'Screech-Break',
+  'Klaplong-Break',
+  'Zaag-Break',
+  'Rawstyle-Break',
+  'Metal-Break',
 
   'Solo',
+  'Sax Solo',
   
   'Outro'
 ] as const;
