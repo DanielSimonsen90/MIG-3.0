@@ -18,6 +18,7 @@ export const ArrangementSections = [
   'Pre-Chorus',
   'Rap-Verse',
   'Build-Up',
+  'Melody Reveal',
 
   'Fake-Drop',
   'Drop',
@@ -31,6 +32,11 @@ export const ArrangementSections = [
   'Techno-Break',
   'Reggae-Break',
   '8-bit Break',
+  'Vocal Chop Break',
+  'Screech Break',
+  'Klaplong Break',
+  'Zaag Break',
+  'Rawstyle Break',
 
   'Solo',
   
