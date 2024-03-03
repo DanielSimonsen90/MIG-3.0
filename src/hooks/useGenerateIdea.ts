@@ -4,8 +4,9 @@ import { IdeaGeneratorService } from "../services";
 
 export function useGenerateIdea() {
   const [idea, setIdea] = useState<Idea | null>(null);
-  const generate = () => {
-    setIdea(IdeaGeneratorService.generateIdea());
+  const generate = async () => {
+    const idea = await IdeaGeneratorService.generateIdea()
+    setIdea(idea);
   }
 
   return [idea, generate] as const;

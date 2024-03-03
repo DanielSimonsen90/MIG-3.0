@@ -1,30 +1,37 @@
 import { Random } from "../common/utils";
-import { Effects, Idea, Scale, assignArrayWithCallback, Moods, Genre, Drums, Synths, Instruments, assignArrayWithSelection, Kicks, Claps, Hihats, Openhats, Snares, Arrangement } from "../common";
+import { Effects, Idea, Scale, assignArrayWithCallback, Moods, Genre, Drums, Synths, Instruments, assignArrayWithSelection, Kicks, Claps, Hihats, Openhats, Snares, Arrangement, Reference } from "../common";
 import { DataService } from "./DataService";
+import OpenAI from "openai";
+import { OPENAI_KEY } from '../env.json';
+
+// @ts-ignore
+const openai = new OpenAI({ apiKey: OPENAI_KEY, dangerouslyAllowBrowser: true,  });
 
 export class IdeaGeneratorService {
-  public static generateIdea(): Idea {
-    const genre = DataService.getRandomGenre();
-    const referenceTrack = DataService.getRandomTrackFromGenre(genre);
+  public static async generateIdea(): Promise<Idea> {
+    const referenceGenre = DataService.getRandomGenre();
+    const referenceTrack = DataService.getRandomTrackFromGenre(referenceGenre);
     const referenceArtist = DataService.getArtistFromTrack(referenceTrack);
     
+    const genre = new Genre(
+      referenceGenre.name, referenceGenre.bpm,
+      IdeaGeneratorService.generateDrums(referenceGenre),
+      IdeaGeneratorService.generateSynths(referenceGenre),
+      IdeaGeneratorService.generateInstruments(referenceGenre),
+      referenceGenre.arrangement
+    );
+    const reference: Reference = {
+      artist: referenceArtist,
+      track: referenceTrack
+    }
+    const scale = new Scale();
+    const mood = Random.fromArray(Moods);
+
     return {
-      genre: new Genre(
-        genre.name, genre.bpm,
-        IdeaGeneratorService.generateDrums(genre),
-        IdeaGeneratorService.generateSynths(genre),
-        IdeaGeneratorService.generateInstruments(genre),
-        genre.arrangement
-      ),
-      reference: {
-        artist: referenceArtist,
-        track: referenceTrack
-      },
-      title: IdeaGeneratorService.generateIdeaTitle(),
-      scale: new Scale(),
-      mood: Random.fromArray(Moods),
+      genre, reference, scale, mood,
+      title: await IdeaGeneratorService.generateIdeaTitle({ genre, mood, scale, reference }),
       effects: generateEffects(),
-      arrangement: IdeaGeneratorService.generateArrangement(genre.arrangement)
+      arrangement: IdeaGeneratorService.generateArrangement(referenceGenre.arrangement)
     }
   }
 
@@ -61,11 +68,39 @@ export class IdeaGeneratorService {
     )
   }
 
-  public static generateIdeaTitle(): string {
+  private static isOpenAIAvailable = true;
+  public static async generateIdeaTitle(idea: Pick<Idea, 'genre' | 'mood' | 'scale' | 'reference'>): Promise<string> {
+    try {
+      return IdeaGeneratorService.isOpenAIAvailable 
+        ? IdeaGeneratorService.generateIdeaTitleUsingGBT(idea)
+        : IdeaGeneratorService.generateIdeaTitleUsingTrackData(idea);
+    } catch (err) {
+      return IdeaGeneratorService.generateIdeaTitleUsingTrackData(idea);
+    }
+  }
+  private static async generateIdeaTitleUsingGBT(idea: Pick<Idea, 'genre' | 'mood' | 'scale' | 'reference'>): Promise<string> {
+    const response = await openai.chat.completions.create({
+      model: 'gpt-3.5-turbo',
+      messages: [{
+        role: "user",
+        content: `I need a name for a ${idea.mood} ${idea.genre.name} song in ${idea.scale.toString()}.`
+        // inspired by ${idea.reference.track.name} by ${idea.reference.artist.name}.
+      }]
+    }).catch((err) => {
+      if (err.type === 'insufficient_quota') { // No more credits on OpenAI
+        IdeaGeneratorService.isOpenAIAvailable = false;
+      } else console.error(err);
+      return { choices: [{ message: { content: IdeaGeneratorService.generateIdeaTitleUsingTrackData(idea) } }] };
+    });
+
+    return response.choices[0].message.content;
+  }
+  private static async generateIdeaTitleUsingTrackData(idea: Pick<Idea, 'genre' | 'mood' | 'scale' | 'reference'>): Promise<string> {
     const wordCount = Random.between(2, 8);
     const result = assignArrayWithSelection(wordCount, DataService.TrackNameWords).join(' '); // TODO: Consider using GBT to fix the name
     return result.charAt(0).toUpperCase() + result.slice(1);
   }
+
   public static generateArrangement(genreArrangement: Arrangement): string {
     const arrangement = Random.chance(33) ? genreArrangement : Random.fromArray(DataService.Arrangements);
     return arrangement.sections.join(' - ');
