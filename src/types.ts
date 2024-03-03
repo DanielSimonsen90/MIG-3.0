@@ -1,0 +1,1 @@
+export type RemoveReadonly<T> = T extends ReadonlyArray<infer U> ? Array<U> : never;
