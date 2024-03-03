@@ -9,6 +9,10 @@ export class Instruments {
     public flute: boolean,
     public sax: boolean,
   ) {}
+
+  public any() {
+    return this.piano || this.guitar || this.horns || this.strings || this.flute || this.sax;
+  }
 }
 
 export default Instruments;

@@ -1,6 +1,6 @@
 import { Genre, assignArrayWithSelection } from '../common';
-import { Random } from '../common/utils';
-import { Artists, Tracks, Genres, TrackNameWords } from '../data';
+import { ArrayUtils, Random } from '../common/utils';
+import { Artists, Tracks, Genres, TrackNameWords, Arrangements } from '../data';
 
 export class DataService {
   public static getRandomGenre(): typeof Genres[number] {
@@ -19,5 +19,9 @@ export class DataService {
     const wordCount = Random.between(2, 8);
     const result = assignArrayWithSelection(wordCount, TrackNameWords).join(' '); // TODO: Consider using GBT to fix the name
     return result.charAt(0).toUpperCase() + result.slice(1);
+  }
+  public static generateArrangement(): string {
+    const arrangement = Random.fromArray(Arrangements);
+    return arrangement.sections.join(' - ');
   }
 }

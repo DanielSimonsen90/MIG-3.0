@@ -1,5 +1,5 @@
 import { Random } from "../common/utils";
-import { Effects, Idea, Scale, assignArrayWithCallback, Mood, Moods } from "../common";
+import { Effects, Idea, Scale, assignArrayWithCallback, Moods } from "../common";
 import { DataService } from "./DataService";
 
 export class IdeaGeneratorService {
@@ -17,7 +17,8 @@ export class IdeaGeneratorService {
       title: DataService.generateIdeaTitle(),
       scale: new Scale(),
       mood: Random.fromArray(Moods),
-      effects: generateEffects()
+      effects: generateEffects(),
+      arrangement: DataService.generateArrangement()
     }
   }
 }

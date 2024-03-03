@@ -8,6 +8,10 @@ export class Effects {
     public subDrop: boolean,
     public impacts: boolean,
   ) {}
+
+  public any() {
+    return this.bigTom || this.tonals || this.whiteNoise || this.subDrop || this.impacts;
+  }
 }
 
 export default Effects;

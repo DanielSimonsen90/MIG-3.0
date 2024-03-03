@@ -18,7 +18,16 @@ export class Random {
 
 export class ArrayUtils {
   public static join<T>(arr: T[]): string {
+    if (arr.length === 0) return '';
+    if (arr.length === 1) return arr[0].toString();
+
     // return all elements in the array as a string separated by a comma and at the end a & sign
     return arr.slice(0, -1).join(', ') + ' & ' + arr.slice(-1);
+  }
+}
+
+export class StringUtils {
+  public static pascalCase(str: string): string {
+    return str.charAt(0).toUpperCase() + str.slice(1);
   }
 }

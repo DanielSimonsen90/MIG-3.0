@@ -10,3 +10,4 @@ export * from './Mood';
 export * from './Reference';
 export * from './Scale';
 export * from './Synths';
+export * from './Synth';

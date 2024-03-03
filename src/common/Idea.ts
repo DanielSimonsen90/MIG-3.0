@@ -11,4 +11,5 @@ export type Idea = {
   scale: Scale;
   mood: Mood;
   effects: Effects;
+  arrangement: string;
 }
