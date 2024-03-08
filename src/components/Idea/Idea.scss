@@ -25,6 +25,10 @@
         grid-area: $area;
       }
     }
+
+    li {
+      margin: .5rem 0;
+    }
   }
 
   footer {

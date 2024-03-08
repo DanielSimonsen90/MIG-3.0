@@ -7,11 +7,15 @@
 body {
   background-color: #222;
   color: #eee;
-  margin-inline: 10rem;
+  margin: 1rem 10rem 3rem;
 }
 
 h1 {
   font-size: 3rem;
+}
+
+p {
+  margin-block: .5rem;
 }
 
 .muted {
@@ -31,15 +35,22 @@ button {
   font-size: 1rem;
   padding: 0.5rem 1rem;
   border-radius: 1em;
-}
 
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  &.link {
+    background-color: transparent;
+    color: #fab54b;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0;
+    border-radius: 1em;
+    text-decoration: underline;
+    transition: color 0.2s;
 
-  > h1 {
-    margin-bottom: 1rem;
+    &:hover {
+      color: ligten(#fab54b, 10%);
+    }
   }
 }
 
@@ -52,13 +63,6 @@ header {
   h2 {
     text-align: center;
   }
-}
-
-#app>footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1ch;
 }
 
 .or {
@@ -76,22 +80,5 @@ header {
     background-color: #999;
     vertical-align: middle;
     margin: 0 .5em;
-  }
-}
-
-button.link {
-  background-color: transparent;
-  color: #fab54b;
-  box-shadow: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-  padding: 0;
-  border-radius: 1em;
-  text-decoration: underline;
-  transition: color 0.2s;
-
-  &:hover {
-    color: ligten(#fab54b, 10%);
   }
 }
