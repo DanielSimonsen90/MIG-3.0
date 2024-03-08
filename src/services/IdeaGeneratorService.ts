@@ -1,14 +1,26 @@
-import { Random } from "../common/utils";
-import { Effects, Idea, Scale, assignArrayWithCallback, Moods, Genre, Drums, Synths, Instruments, assignArrayWithSelection, Kicks, Claps, Hihats, Openhats, Snares, Arrangement, Reference } from "../common";
-import { DataService } from "./DataService";
 import OpenAI from "openai";
+
+import { Random } from "../common/utils";
+import { 
+  Effects, Idea, Scale, 
+  assignArrayWithCallback, 
+  Moods, Genre, Drums, 
+  Synths, Instruments, 
+  assignArrayWithSelection, 
+  Kicks, Claps, Hihats, 
+  Openhats, Snares, Arrangement, 
+  Reference 
+} from "../common";
+import { DataService } from "./DataService";
+
 import { OPENAI_KEY } from '../env.json';
+import { Nullable } from "../types";
 
 // @ts-ignore
 const openai = new OpenAI({ apiKey: OPENAI_KEY, dangerouslyAllowBrowser: true,  });
 
 export class IdeaGeneratorService {
-  public static async generateIdea(): Promise<Idea> {
+  public static async generateIdea(idea: Nullable<Idea>): Promise<Idea> {
     const referenceGenre = DataService.getRandomGenre();
     const referenceTrack = DataService.getRandomTrackFromGenre(referenceGenre);
     const referenceArtist = DataService.getArtistFromTrack(referenceTrack);
@@ -31,7 +43,8 @@ export class IdeaGeneratorService {
       genre, reference, scale, mood,
       title: await IdeaGeneratorService.generateIdeaTitle({ genre, mood, scale, reference }),
       effects: generateEffects(),
-      arrangement: IdeaGeneratorService.generateArrangement(referenceGenre.arrangement)
+      arrangement: IdeaGeneratorService.generateArrangement(referenceGenre.arrangement),
+      ...idea
     }
   }
 
